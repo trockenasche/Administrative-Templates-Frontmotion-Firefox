@@ -1,0 +1,69 @@
+<policyDefinitions revision="1.10" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.Policies.5D689613_A094_47AA_98AC_80D780DD632B" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="" />
+  <resources minRequiredRevision="1.0" />
+  <categories>
+  <category name="FIREFOX_CATEGORY" displayName="$(string.FIREFOX_CATEGORY)" />
+    <category name="ADBLOCK_PLUS" displayName="$(string.ADBLOCK_PLUS)">
+      <parentCategory ref="FIREFOX_CATEGORY" />
+	</category>
+    <category name="WOT" displayName="$(string.WOT)">
+      <parentCategory ref="FIREFOX_CATEGORY"/>
+    </category>
+	<category name="FIREFOX" displayName="$(string.FIREFOX)">
+      <parentCategory ref="FIREFOX_CATEGORY" />
+	</category>
+  </categories>
+  <policies>
+  <policy name="BROWSER_PLACES_SMARTBOOKMARKSVERSION" class="Machine" displayName="$(string.BROWSER_PLACES_SMARTBOOKMARKSVERSION)" explainText="$(string.BROWSER_PLACES_SMARTBOOKMARKSVERSION_HELP)" presentation="$(presentation.BROWSER_PLACES_SMARTBOOKMARKSVERSION)" key="Software\Policies\Mozilla\lockPref">
+      <parentCategory ref="FIREFOX" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="BROWSER_PLACES_SMARTBOOKMARKSVERSION" key="Software\Policies\Mozilla\lockPref" valueName="browser.places.smartBookmarksVersion" />
+      </elements>
+    </policy>
+    <policy name="BROWSER_NEWTAB_PRELOAD" class="Machine" displayName="$(string.BROWSER_NEWTAB_PRELOAD)" explainText="$(string.BROWSER_NEWTAB_PRELOAD_HELP)" presentation="$(presentation.BROWSER_NEWTAB_PRELOAD)" key="Software\Policies\Mozilla\lockPref" valueName="browser.newtab.preload">
+      <parentCategory ref="FIREFOX" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+	  <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+    </policy>
+    <policy name="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY_HELP)" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY)" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.data_directory">
+      <parentCategory ref="ADBLOCK_PLUS" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="TXT_EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.data_directory" />
+      </elements>
+    </policy>
+    <policy name="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION_HELP)" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION)" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.currentVersion">
+      <parentCategory ref="ADBLOCK_PLUS" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="TXT_EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.currentVersion" />
+      </elements>
+    </policy>
+    <policy name="WEBOFTRUST_FIRSTRUN_GUIDE" class="Machine" displayName="$(string.WEBOFTRUST_FIRSTRUN_GUIDE)" explainText="$(string.WEBOFTRUST_FIRSTRUN_GUIDE_HELP)" presentation="$(presentation.WEBOFTRUST_FIRSTRUN_GUIDE)" key="Software\Policies\Mozilla\lockPref" valueName="weboftrust.firstrun_guide">
+      <parentCategory ref="WOT" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+      <elements>
+        <text id="TXT_WEBOFTRUST_FIRSTRUN_GUIDE" key="Software\Policies\Mozilla\lockPref" valueName="weboftrust.firstrun_guide" />
+      </elements>
+    </policy>
+    <policy name="DATAREPORTING_HEALTHREPORT_UPLOADENABLED" class="Machine" displayName="$(string.DATAREPORTING_HEALTHREPORT_UPLOADENABLED)" explainText="$(string.DATAREPORTING_HEALTHREPORT_UPLOADENABLED_HELP)" key="Software\Policies\Mozilla\lockPref" valueName="datareporting.healthreport.uploadEnabled">
+      <parentCategory ref="FIREFOX" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+      <enabledValue><decimal value="1" /></enabledValue>
+      <disabledValue><decimal value="0" /></disabledValue>
+	</policy>
+	<policy name="SECURITY_TLS_VERSION_MIN" class="Machine" displayName="$(string.SECURITY_TLS_VERSION_MIN)" explainText="$(string.SECURITY_TLS_VERSION_MIN_Help)" presentation="$(presentation.SECURITY_TLS_VERSION_MIN)" key="Software\Policies\Mozilla\lockPref">
+      <parentCategory ref="FIREFOX" />
+      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
+      <elements>
+        <decimal id="SECURITY_TLS_VERSION_MIN" key="Software\Policies\Mozilla\lockPref" valueName="security.tls.version.min" />
+      </elements>
+    </policy>	
+  </policies>
+</policyDefinitions>
