@@ -1,69 +1,178 @@
-<policyDefinitions revision="1.10" schemaVersion="1.0">
-  <policyNamespaces>
-    <target prefix="fullarmor" namespace="FullArmor.Policies.5D689613_A094_47AA_98AC_80D780DD632B" />
-    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
-  </policyNamespaces>
-  <supersededAdm fileName="" />
-  <resources minRequiredRevision="1.0" />
-  <categories>
-  <category name="FIREFOX_CATEGORY" displayName="$(string.FIREFOX_CATEGORY)" />
-    <category name="ADBLOCK_PLUS" displayName="$(string.ADBLOCK_PLUS)">
-      <parentCategory ref="FIREFOX_CATEGORY" />
-	</category>
-    <category name="WOT" displayName="$(string.WOT)">
-      <parentCategory ref="FIREFOX_CATEGORY"/>
-    </category>
-	<category name="FIREFOX" displayName="$(string.FIREFOX)">
-      <parentCategory ref="FIREFOX_CATEGORY" />
-	</category>
-  </categories>
-  <policies>
-  <policy name="BROWSER_PLACES_SMARTBOOKMARKSVERSION" class="Machine" displayName="$(string.BROWSER_PLACES_SMARTBOOKMARKSVERSION)" explainText="$(string.BROWSER_PLACES_SMARTBOOKMARKSVERSION_HELP)" presentation="$(presentation.BROWSER_PLACES_SMARTBOOKMARKSVERSION)" key="Software\Policies\Mozilla\lockPref">
-      <parentCategory ref="FIREFOX" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-      <elements>
-        <text id="BROWSER_PLACES_SMARTBOOKMARKSVERSION" key="Software\Policies\Mozilla\lockPref" valueName="browser.places.smartBookmarksVersion" />
-      </elements>
-    </policy>
-    <policy name="BROWSER_NEWTAB_PRELOAD" class="Machine" displayName="$(string.BROWSER_NEWTAB_PRELOAD)" explainText="$(string.BROWSER_NEWTAB_PRELOAD_HELP)" presentation="$(presentation.BROWSER_NEWTAB_PRELOAD)" key="Software\Policies\Mozilla\lockPref" valueName="browser.newtab.preload">
-      <parentCategory ref="FIREFOX" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-	  <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-    </policy>
-    <policy name="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY_HELP)" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY)" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.data_directory">
-      <parentCategory ref="ADBLOCK_PLUS" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-      <elements>
-        <text id="TXT_EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.data_directory" />
-      </elements>
-    </policy>
-    <policy name="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION_HELP)" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION)" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.currentVersion">
-      <parentCategory ref="ADBLOCK_PLUS" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-      <elements>
-        <text id="TXT_EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.currentVersion" />
-      </elements>
-    </policy>
-    <policy name="WEBOFTRUST_FIRSTRUN_GUIDE" class="Machine" displayName="$(string.WEBOFTRUST_FIRSTRUN_GUIDE)" explainText="$(string.WEBOFTRUST_FIRSTRUN_GUIDE_HELP)" presentation="$(presentation.WEBOFTRUST_FIRSTRUN_GUIDE)" key="Software\Policies\Mozilla\lockPref" valueName="weboftrust.firstrun_guide">
-      <parentCategory ref="WOT" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-      <elements>
-        <text id="TXT_WEBOFTRUST_FIRSTRUN_GUIDE" key="Software\Policies\Mozilla\lockPref" valueName="weboftrust.firstrun_guide" />
-      </elements>
-    </policy>
-    <policy name="DATAREPORTING_HEALTHREPORT_UPLOADENABLED" class="Machine" displayName="$(string.DATAREPORTING_HEALTHREPORT_UPLOADENABLED)" explainText="$(string.DATAREPORTING_HEALTHREPORT_UPLOADENABLED_HELP)" key="Software\Policies\Mozilla\lockPref" valueName="datareporting.healthreport.uploadEnabled">
-      <parentCategory ref="FIREFOX" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-      <enabledValue><decimal value="1" /></enabledValue>
-      <disabledValue><decimal value="0" /></disabledValue>
-	</policy>
-	<policy name="SECURITY_TLS_VERSION_MIN" class="Machine" displayName="$(string.SECURITY_TLS_VERSION_MIN)" explainText="$(string.SECURITY_TLS_VERSION_MIN_Help)" presentation="$(presentation.SECURITY_TLS_VERSION_MIN)" key="Software\Policies\Mozilla\lockPref">
-      <parentCategory ref="FIREFOX" />
-      <supportedOn ref="windows:SUPPORTED_ProductOnly" />
-      <elements>
-        <decimal id="SECURITY_TLS_VERSION_MIN" key="Software\Policies\Mozilla\lockPref" valueName="security.tls.version.min" />
-      </elements>
-    </policy>	
-  </policies>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.20" schemaVersion="1.0" >
+	<policyNamespaces >
+		<target prefix="Firefox" namespace="Firefox.Policies.0817EB0E_E624_48AE_8CF8_A701871AB6D3" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" fallbackCulture="en-us" />
+	<supportedOn >
+		<definitions >
+			<definition name="SupportedOn_8600015" displayName="$(string.String_SupportedOn_FrontMotion_Firefox_8600016)" />
+		</definitions>
+	</supportedOn>
+	<categories >
+
+		<category name="FIREFOX_CATEGORY" displayName="$(string.FIREFOX_CATEGORY)" key="Software\Policies\Mozilla\lockPref" />
+		<category name="ADBLOCK_PLUS" displayName="$(string.ADBLOCK_PLUS)" >
+			<parentCategory ref="FIREFOX_CATEGORY" />
+		</category>
+		<category name="FIREFOX" displayName="$(string.FIREFOX)" >
+			<parentCategory ref="FIREFOX_CATEGORY" />
+		</category>
+		<category name="NEWTABOVERRIDE" displayName="$(string.NEWTABOVERRIDE)" >
+			<parentCategory ref="FIREFOX_CATEGORY" />
+		</category>
+		<category name="UBLOCKORIGIN" displayName="$(string.UBLOCKORIGIN)" >
+			<parentCategory ref="FIREFOX_CATEGORY" />
+		</category>
+		<category name="WOT" displayName="$(string.WOT)" >
+			<parentCategory ref="FIREFOX_CATEGORY" />
+		</category>
+	</categories>
+	<policies >
+		<policy name="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY)" >
+			<parentCategory ref="ADBLOCK_PLUS" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="TXT_EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.data_directory" />
+			</elements>
+		</policy>
+		<policy name="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION)" >
+			<parentCategory ref="ADBLOCK_PLUS" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="TXT_EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" key="Software\Policies\Mozilla\lockPref" valueName="extensions.adblockplus.currentVersion" />
+			</elements>
+		</policy>
+		<policy name="EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE" class="Machine" displayName="$(string.EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE)" explainText="$(string.EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE)" >
+			<parentCategory ref="ADBLOCK_PLUS" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE" valueName="" />
+			</elements>
+		</policy>
+		<policy name="BROWSER_PLACES_SMARTBOOKMARKSVERSION" class="Machine" displayName="$(string.BROWSER_PLACES_SMARTBOOKMARKSVERSION)" explainText="$(string.BROWSER_PLACES_SMARTBOOKMARKSVERSION_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.BROWSER_PLACES_SMARTBOOKMARKSVERSION)" >
+			<parentCategory ref="FIREFOX" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="BROWSER_PLACES_SMARTBOOKMARKSVERSION" key="Software\Policies\Mozilla\lockPref" valueName="browser.places.smartBookmarksVersion" />
+			</elements>
+		</policy>
+		<policy name="BROWSER_NEWTAB_PRELOAD" class="Machine" displayName="$(string.BROWSER_NEWTAB_PRELOAD)" explainText="$(string.BROWSER_NEWTAB_PRELOAD_HELP)" key="Software\Policies\Mozilla\lockPref" valueName="browser.newtab.preload" >
+			<parentCategory ref="FIREFOX" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<enabledValue >
+				<string >1</string>
+			</enabledValue>
+			<disabledValue >
+				<string >0</string>
+			</disabledValue>
+		</policy>
+		<policy name="DATAREPORTING_HEALTHREPORT_UPLOADENABLED" class="Machine" displayName="$(string.DATAREPORTING_HEALTHREPORT_UPLOADENABLED)" explainText="$(string.DATAREPORTING_HEALTHREPORT_UPLOADENABLED_HELP)" key="Software\Policies\Mozilla\lockPref" valueName="datareporting.healthreport.uploadEnabled" >
+			<parentCategory ref="FIREFOX" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<enabledValue >
+				<string >1</string>
+			</enabledValue>
+			<disabledValue >
+				<string >0</string>
+			</disabledValue>
+		</policy>
+		<policy name="SECURITY_TLS_VERSION_MIN" class="Machine" displayName="$(string.SECURITY_TLS_VERSION_MIN)" explainText="$(string.SECURITY_TLS_VERSION_MIN_Help)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.SECURITY_TLS_VERSION_MIN)" >
+			<parentCategory ref="FIREFOX" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<decimal id="SECURITY_TLS_VERSION_MIN" key="Software\Policies\Mozilla\lockPref" valueName="security.tls.version.min" />
+			</elements>
+		</policy>
+		<policy name="EXTENSIONS_NEWTABOVERRIDE_TYPE" class="Machine" displayName="$(string.EXTENSIONS_NEWTABOVERRIDE_TYPE)" explainText="$(string.EXTENSIONS_NEWTABOVERRIDE_TYPE_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.EXTENSIONS_NEWTABOVERRIDE_TYPE)" >
+			<parentCategory ref="NEWTABOVERRIDE" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<enum id="DST_D9ED9E0C_6AA3_475A_8368_86D5CEA68479" valueName="extensions.newtaboverride@agenedia.com.type" key="Software\Policies\Mozilla\lockPref" >
+					<item displayName="$(string.ITM_5F0C7A42_1B6D_49BC_9BAA_F1ED3C0B8A7F)" >
+						<value >
+							<string >about:blank</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_63822399_80F4_4892_A670_151DE4812122)" >
+						<value >
+							<string >about:home</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_EA8F7052_80C1_4722_8AB9_D9C88B4D61A1)" >
+						<value >
+							<string >about:newtab</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_7028CFCD_1900_4C63_A563_04CF73BCCD53)" >
+						<value >
+							<string >about:sync-tabs</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_983E50C4_CA89_4306_9526_E6D1A483288F)" >
+						<value >
+							<string >homepage</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_495FF90C_4DAE_4DAE_A87F_DE8ECED44D80)" >
+						<value >
+							<string >custom_url</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_4353BB96_5A9A_47FA_A407_10542D89451E)" >
+						<value >
+							<string >clipboard</string>
+						</value>
+					</item>
+					<item displayName="$(string.ITM_84016BF7_07FD_46E7_BF1B_BA01A4D8B3A0)" >
+						<value >
+							<string >feed</string>
+						</value>
+					</item>
+				</enum>
+			</elements>
+		</policy>
+		<policy name="EXTENSIONS_NEWTABOVERRIDE_CLEAR_LOCATIONBAR" class="Machine" displayName="$(string.EXTENSIONS_NEWTABOVERRIDE_CLEAR_LOCATIONBAR)" explainText="$(string.EXTENSIONS_NEWTABOVERRIDE_CLEAR_LOCATIONBAR_Help)" key="Software\Policies\Mozilla\lockPref" valueName="extensions.newtaboverride@agenedia.com.clear_locationbar" >
+			<parentCategory ref="NEWTABOVERRIDE" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<enabledValue >
+				<string >1</string>
+			</enabledValue>
+			<disabledValue >
+				<string >0</string>
+			</disabledValue>
+		</policy>
+		<policy name="EXTENSIONS_NEWTABOVERRIDE_FOCUS_WEBSITE" class="Machine" displayName="$(string.EXTENSIONS_NEWTABOVERRIDE_FOCUS_WEBSITE)" explainText="$(string.EXTENSIONS_NEWTABOVERRIDE_FOCUS_WEBSITE_Help)" key="Software\Policies\Mozilla\lockPref" valueName="extensions.newtaboverride@agenedia.com.focus_website" >
+			<parentCategory ref="NEWTABOVERRIDE" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<enabledValue >
+				<string >1</string>
+			</enabledValue>
+			<disabledValue >
+				<string >0</string>
+			</disabledValue>
+		</policy>
+		<policy name="EXTENSIONS_NEWTABOVERRIDE_URL" class="Machine" displayName="$(string.EXTENSIONS_NEWTABOVERRIDE_URL)" explainText="$(string.EXTENSIONS_NEWTABOVERRIDE_URL_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.EXTENSIONS_NEWTABOVERRIDE_URL)" >
+			<parentCategory ref="NEWTABOVERRIDE" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="TXT_EXTENSIONS_NEWTABOVERRIDE_URL" key="Software\Policies\Mozilla\lockPref" valueName="extensions.newtaboverride@agenedia.com.url" />
+			</elements>
+		</policy>
+		<policy name="EXTENSIONS_UBLOCKORIGIN" class="Machine" displayName="$(string.EXTENSIONS_UBLOCKORIGIN)" explainText="$(string.EXTENSIONS_UBLOCKORIGIN_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.EXTENSIONS_UBLOCKORIGIN)" >
+			<parentCategory ref="UBLOCKORIGIN" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="TXT_EXTENSIONS_UBLOCKORIGIN" key="Software\Policies\Mozilla\lockPref" valueName="extensions.ublock0.adminSettings" />
+			</elements>
+		</policy>
+		<policy name="WEBOFTRUST_FIRSTRUN_GUIDE" class="Machine" displayName="$(string.WEBOFTRUST_FIRSTRUN_GUIDE)" explainText="$(string.WEBOFTRUST_FIRSTRUN_GUIDE_HELP)" key="Software\Policies\Mozilla\lockPref" presentation="$(presentation.WEBOFTRUST_FIRSTRUN_GUIDE)" >
+			<parentCategory ref="WOT" />
+			<supportedOn ref="SupportedOn_8600015" />
+			<elements >
+				<text id="TXT_WEBOFTRUST_FIRSTRUN_GUIDE" key="Software\Policies\Mozilla\lockPref" valueName="weboftrust.firstrun_guide" />
+			</elements>
+		</policy>
+	</policies>
 </policyDefinitions>

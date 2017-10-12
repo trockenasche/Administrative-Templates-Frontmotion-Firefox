@@ -1,60 +1,111 @@
-<policyDefinitionResources revision="1.10" schemaVersion="1.0">
-  <displayName></displayName>
-  <description></description>
-  <resources>
-    <stringTable>
-	  <string id="FIREFOX_CATEGORY">Firefox Optionen</string>
-      <string id="ADBLOCK_PLUS">Adblock Plus</string>
-      <string id="WOT">Web of Trust</string>
-      <string id="FIREFOX">Firefox</string>
-      <string id="BROWSER_NEWTAB_PRELOAD">browser.newtab.preload</string>
-	  <string id="BROWSER_NEWTAB_PRELOAD_HELP">Wenn eine andere URL unter browser.newtab.url gesetzt ist muss diese Option deaktiviert werden, sonst l&#228;dt Firefox dieser URL nicht als neu Tab-Seite.</string>
-      <string id="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY">extensions.adblockplus.data_directory</string>
-	  <string id="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY_HELP">Das Verzeichnis, in dem Adblock Plus seine Daten speichern soll. Das kann entweder ein absoluter Pfad oder ein Pfad relativ zum Benutzerprofil sein.</string>
-	  <string id="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION">extensions.adblockplus.currentVersion</string>
-      <string id="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION_HELP">Speichert die letzte verwendete Adblock Plus Version. Diese Einstellung wird benutzt, um notwendige Aktionen bei Upgrades und Neuinstallationen auszul&#246;sen.</string>
-      <string id="WEBOFTRUST_FIRSTRUN_GUIDE">weboftrust.firstrun_guide</string>
-      <string id="WEBOFTRUST_FIRSTRUN_GUIDE_HELP">Zum deaktivieren des Ersteinrichtungs-Assistenten muss der Wert 3 sein.</string>
-      <string id="DATAREPORTING_HEALTHREPORT_UPLOADENABLED">datareporting.healthreport.uploadEnabled</string>
-	  <string id="DATAREPORTING_HEALTHREPORT_UPLOADENABLED_HELP">Zum Aktivieren/Deaktivieren des automatischen Hochladens vom Mozilla Health-Report.</string>
-	  <string id="BROWSER_PLACES_SMARTBOOKMARKSVERSION">browser.places.smartBookmarksVersion</string>
-	  <string id="BROWSER_PLACES_SMARTBOOKMARKSVERSION_HELP">Zum deaktivieren des Anlegens der automatischen Lesezeichen bei neuen Profilen muss der Wert auf -1 gesetzt werden.</string>
-	  <string id="SECURITY_TLS_VERSION_MIN">security.tls.version.min</string>
-	  <string id="SECURITY_TLS_VERSION_MIN_Help">Minimum an SSL Version:
-0 f&#252;r SSL 3.0
-1 f&#252;r TLS 1.0
-2 f&#252;r TLS 1.1
-3 f&#252;r TLS 1.2</string>
-    </stringTable>
-    <presentationTable>
-	  <presentation id="BROWSER_NEWTAB_PRELOAD" />
-      <presentation id="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY">
-        <textBox refId="TXT_EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY">
-          <label>Pfad:</label>
-          <defaultValue></defaultValue>
-        </textBox>
-      </presentation>
-      <presentation id="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION">
-        <textBox refId="TXT_EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION">
-          <label>Version:</label>
-          <defaultValue></defaultValue>
-        </textBox>
-      </presentation>
-      <presentation id="WEBOFTRUST_FIRSTRUN_GUIDE">
-        <textBox refId="TXT_WEBOFTRUST_FIRSTRUN_GUIDE">
-		  <label>weboftrust.firstrun_guide</label>
-		  <defaultValue>3</defaultValue>
-		</textBox>
-      </presentation>
-	  <presentation id="BROWSER_PLACES_SMARTBOOKMARKSVERSION">
-        <textBox refId="BROWSER_PLACES_SMARTBOOKMARKSVERSION">
-          <label>Wert:</label>
-          <defaultValue>-1</defaultValue>
-        </textBox>
-      </presentation>
-	  <presentation id="SECURITY_TLS_VERSION_MIN">
-        <decimalTextBox refId="SECURITY_TLS_VERSION_MIN">Wert:</decimalTextBox>
-      </presentation>
-    </presentationTable>
-  </resources>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.20" schemaVersion="1.0" >
+	<displayName />
+	<description />
+	<resources >
+		<stringTable >
+			<string id="String_SupportedOn_FrontMotion_Firefox_8600016" >FrontMotion Firefox Community Edition</string>
+			<string id="FIREFOX_CATEGORY" >Firefox Options</string>
+			<string id="ADBLOCK_PLUS" >Adblock Plus</string>
+			<string id="FIREFOX" >Firefox</string>
+			<string id="NEWTABOVERRIDE" >New Tab Override</string>
+			<string id="UBLOCKORIGIN" >uBlock Origin</string>
+			<string id="WOT" >Web of Trust</string>
+			<string id="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" >extensions.adblockplus.data_directory</string>
+			<string id="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY_HELP" >The directory where Adblock Plus should store its data. This can be either an absolute path, or it can a directory location relative to the user's profile.</string>
+			<string id="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" >extensions.adblockplus.currentVersion</string>
+			<string id="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION_HELP" >Stores the last used Adblock Plus version, this will trigger actions that need to be done on upgrade or first install.</string>
+			<string id="EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE" >extensions.adblockplus.preconfigured.suppress_first_run_page</string>
+			<string id="EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE_HELP" >suppress_first_run_page preference introduced by previous release can now be preconfigured by machine administrators via setting extensions.adblockplus.preconfigured.suppress_first_run_page Firefox preference.</string>
+			<string id="BROWSER_PLACES_SMARTBOOKMARKSVERSION" >browser.places.smartBookmarksVersion</string>
+			<string id="BROWSER_PLACES_SMARTBOOKMARKSVERSION_HELP" >Set to -1 to disable Smart Bookmarks creation.</string>
+			<string id="BROWSER_NEWTAB_PRELOAD" >browser.newtab.preload</string>
+			<string id="BROWSER_NEWTAB_PRELOAD_HELP" >If an URL is set under browser.newtab.url, this option need to be disabled.</string>
+			<string id="DATAREPORTING_HEALTHREPORT_UPLOADENABLED" >datareporting.healthreport.uploadEnabled</string>
+			<string id="DATAREPORTING_HEALTHREPORT_UPLOADENABLED_HELP" >This option sends data about Firefox to Mozilla.</string>
+			<string id="SECURITY_TLS_VERSION_MIN" >security.tls.version.min</string>
+			<string id="SECURITY_TLS_VERSION_MIN_Help" >Minimum version of SSL
+0 for SSL 3.0
+1 for TLS 1.0
+2 for TLS 1.1
+3 for TLS 1.2</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_TYPE" >extensions.newtaboverride@agenedia.com.type</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_TYPE_HELP" >Please Choose:
+about:blank
+about:home
+about:newtab
+about:sync-tabs
+Homepage
+custom URL
+from clipboard
+Mozilla News (German)</string>
+			<string id="ITM_5F0C7A42_1B6D_49BC_9BAA_F1ED3C0B8A7F" >about:blank</string>
+			<string id="ITM_63822399_80F4_4892_A670_151DE4812122" >about:home</string>
+			<string id="ITM_EA8F7052_80C1_4722_8AB9_D9C88B4D61A1" >about:newtab</string>
+			<string id="ITM_7028CFCD_1900_4C63_A563_04CF73BCCD53" >about:sync-tabs</string>
+			<string id="ITM_983E50C4_CA89_4306_9526_E6D1A483288F" >Homepage</string>
+			<string id="ITM_495FF90C_4DAE_4DAE_A87F_DE8ECED44D80" >custom URL</string>
+			<string id="ITM_4353BB96_5A9A_47FA_A407_10542D89451E" >from clipboard</string>
+			<string id="ITM_84016BF7_07FD_46E7_BF1B_BA01A4D8B3A0" >Mozilla News (German)</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_CLEAR_LOCATIONBAR" >extensions.newtaboverride@agenedia.com.clear_locationbar</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_CLEAR_LOCATIONBAR_Help" >Clear location bar after opening a new tab</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_FOCUS_WEBSITE" >extensions.newtaboverride@agenedia.com.focus_website</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_FOCUS_WEBSITE_Help" >Set focus to the web page instead of the location bar</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_URL" >extensions.newtaboverride@agenedia.com.url</string>
+			<string id="EXTENSIONS_NEWTABOVERRIDE_URL_HELP" >Since Firefox version 41 until 56 you need to use this addon set a new tab url.</string>
+			<string id="EXTENSIONS_UBLOCKORIGIN" >extensions.ublock0.adminSettings</string>
+			<string id="EXTENSIONS_UBLOCKORIGIN_HELP" >Now, the value for adminSettings must itself be a plain string, and this means we need to encode the above text into a string, using JSON.stringify. Here is a small utility to help you deal with this step: http://raymondhill.net/ublock/adminSetting.html.
+
+More dateils: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin</string>
+			<string id="WEBOFTRUST_FIRSTRUN_GUIDE" >weboftrust.firstrun_guide</string>
+			<string id="WEBOFTRUST_FIRSTRUN_GUIDE_HELP" >Should be 3 for disabling the start-up wizard.</string>
+		</stringTable>
+		<presentationTable >
+			<presentation id="EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" >
+				<textBox refId="TXT_EXTENSIONS_ADBLOCKPLUS_DATA_DIRECTORY" >
+					<label >Path:</label>
+				</textBox>
+			</presentation>
+			<presentation id="EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" >
+				<textBox refId="TXT_EXTENSIONS_ADBLOCKPLUS_CURRENTVERSION" >
+					<label >Version:</label>
+				</textBox>
+			</presentation>
+			<presentation id="EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE" >
+				<textBox refId="EXTENSIONS_ADBLOCKPLUS_PRECONFIGURED_SUPPRESS_FIRST_RUN_PAGE" >
+					<label >Value:</label>
+					<defaultValue >1</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="BROWSER_PLACES_SMARTBOOKMARKSVERSION" >
+				<textBox refId="BROWSER_PLACES_SMARTBOOKMARKSVERSION" >
+					<label >Value:</label>
+					<defaultValue >-1</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="SECURITY_TLS_VERSION_MIN" >
+				<decimalTextBox refId="SECURITY_TLS_VERSION_MIN" >Value:</decimalTextBox>
+			</presentation>
+			<presentation id="EXTENSIONS_NEWTABOVERRIDE_TYPE" >
+				<dropdownList refId="DST_D9ED9E0C_6AA3_475A_8368_86D5CEA68479" defaultItem="5" >Option</dropdownList>
+			</presentation>
+			<presentation id="EXTENSIONS_NEWTABOVERRIDE_URL" >
+				<textBox refId="TXT_EXTENSIONS_NEWTABOVERRIDE_URL" >
+					<label >URL</label>
+					<defaultValue >http://</defaultValue>
+				</textBox>
+			</presentation>
+			<presentation id="EXTENSIONS_UBLOCKORIGIN" >
+				<textBox refId="TXT_EXTENSIONS_UBLOCKORIGIN" >
+					<label >JSON:</label>
+				</textBox>
+			</presentation>
+			<presentation id="WEBOFTRUST_FIRSTRUN_GUIDE" >
+				<textBox refId="TXT_WEBOFTRUST_FIRSTRUN_GUIDE" >
+					<label >Value:</label>
+					<defaultValue >3</defaultValue>
+				</textBox>
+			</presentation>
+		</presentationTable>
+	</resources>
 </policyDefinitionResources>
